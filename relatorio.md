@@ -148,3 +148,7 @@ Hosts encontrados:
 |--------------------------------|---------|------------|------------|
 | Restringir Zabbix por IP/VPN    | Alto    | Fácil      | Alta       |
 | Forçar TLS em LDAP/MySQL/SMB    | Alto    | Médio      | Alta      
+| Revisar e endurecer SMB shares  | Médio   | Fácil      | Alta
+| Isolar Guest Net via VLAN       | Médio   | Fácil      | Alta
+| Habilitar 2FA LDAP / Zabbiz     | Alto    | Médio      | Média
+| Migrar Servidor Legado          | Alto    | Difícil    | Média
