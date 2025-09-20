@@ -113,6 +113,42 @@ Hosts encontrados:
 
 ---
 
+### 3.4 Mais evidências coletadas
+
+Comandos principais:
+
+nmap -sn -T4 10.10.10.0/24 -oG - para descobrir hosts vivos no Corp Net.
+nmap -sn -T4 10.10.50.0/24 -oG - para descobrir hosts vivos no Guest Net.
+nmap -sn -T4 10.10.30.0/24 -oG - para descobrir hosts vivos no Infra Net.
+nmap -p 21,3306,389,445,80 --script <scripts> para serviços específicos.
+Serviços mapeados:
+
+SMB enum shares e OS discovery: smb-os-discovery,smb-enum-shares
+LDAP rootDSE info: ldap-rootdse
+MySQL info: mysql-info
+Web server (Zabbix) testado com curl
+HTML exposto:
+
+Zabbix Web exibe login, metadados do painel, arquivos CSS, favicon e scripts inline.
+LDAP rootDSE:
+
+Contexto: dc=example,dc=org
+Mecanismos SASL: SCRAM, GSSAPI, NTLM, DIGEST-MD5.
+MySQL:
+
+Versão: 8.0.42
+Plugin: caching_sha2_password
+Salt visível no handshake.
+Arquivos gerados:
+
+infra_net_servico_smb.txt
+infra_net_servico_zabbix.txt
+infra_net_servico_ldap-rootdse.txt
+infra_net_servico_mysql-info.txt
+infra_net_ips.txt e infra_net_ips_hosts.txt
+corp_net_ips.txt e corp_net_ips_hosts.txt
+guest_net_ips.txt e guest_net_ips_hosts.txt
+
 ## 4. Diagnóstico
 
 - A rede está segmentada corretamente em Corp, Guest e Infra.
